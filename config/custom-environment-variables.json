@@ -1,3 +1,4 @@
 {
-    "dbKey" : "travelApp_Db"
+    "dbKey" : "travelApp_Db",
+    "jwtPrivateKey" : "planIt_jwtPrivateKey"
 }

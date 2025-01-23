@@ -4,14 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const config = require('config');
 const error = require('./middleware/error');
+const signup = require('./routes/user/signup');
 
 const app = express();
 
 require('./startup/logger')();
 require('./startup/config')();
 
+app.use(express.json());
+app.use('/api/user/signUp',signup);
 app.use(error);
-console.log(process.env.travelApp_Db);
 
 mongoose.connect(config.get('dbKey'))
     .then( () => winston.info('Connected to Database...'));
