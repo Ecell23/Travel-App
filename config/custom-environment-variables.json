@@ -1,4 +1,6 @@
 {
     "dbKey" : "travelApp_Db",
-    "jwtPrivateKey" : "planIt_jwtPrivateKey"
+    "jwtPrivateKey" : "planIt_jwtPrivateKey",
+    "adminEmail" : "planIt_Auth_email",
+    "adminEmailPass" : "planIt_Auth_pass"
 }
