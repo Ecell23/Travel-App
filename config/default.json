@@ -1,3 +1,6 @@
 {
-    "dbKey" : ""
+    "dbKey" : "",
+    "jwtPrivateKey" : "",
+    "adminEmail" : "",
+    "adminEmailPass" : ""
 }

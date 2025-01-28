@@ -10,8 +10,9 @@ const app = express();
 require('./startup/logger')();
 require('./startup/config')();
 
+app.use(express.json());
+require('./startup/userRoutes')(app);
 app.use(error);
-console.log(process.env.travelApp_Db);
 
 mongoose.connect(config.get('dbKey'))
     .then( () => winston.info('Connected to Database...'));
