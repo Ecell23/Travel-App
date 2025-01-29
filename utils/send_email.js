@@ -1,12 +1,34 @@
 const nodemailer = require( 'nodemailer');
 const winston = require('winston');
 const config = require('config');
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+
+const oauth2Client = new OAuth2(
+    config.get('clientId'),
+    config.get('clientSecret'),
+    "https://developers.google.com/oauthplayground"
+);
+
+oauth2Client.setCredentials({
+    refresh_token: config.get('refreshToken'),
+});
+
+const accessToken = oauth2Client.getAccessToken();
 
 let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     service: 'gmail',
     auth: {
+        type: 'OAuth2',
         user: config.get('adminEmail'),
-        pass: config.get('adminEmailPass')
+        pass: config.get('adminEmailPass'),
+        clientId: config.get('clientId'),
+        clientSecret: config.get('clientSecret'),
+        refreshToken: config.get('refreshToken'),
+        accessToken
     }
 });
 
