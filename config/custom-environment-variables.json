@@ -1,6 +1,9 @@
 {
-    "dbKey" : "travelApp_Db",
-    "jwtPrivateKey" : "planIt_jwtPrivateKey",
-    "adminEmail" : "planIt_Auth_email",
-    "adminEmailPass" : "planIt_Auth_pass"
+    "dbKey" : "TRAVELAPP_DB",
+    "jwtPrivateKey" : "PLANIT_JWTPRIVATEKEY",
+    "adminEmail" : "PLANIT_AUTH_EMAIL",
+    "adminEmailPass" : "PLANIT_AUTH_PASS",
+    "clientId": "CLIEND_ID",
+    "clientSecret": "CLIENT_SECRET",
+    "refreshToken": "REFRESH_TOKEN"
 }
