@@ -4,7 +4,7 @@ const signup = require('../routes/user/signup');
 const sendOtp = require('../routes/user/send_otp');
 const login = require('../routes/user/login');
 const verifyOtp = require('../routes/user/verify_otp');
-const resetPassword = require('../routes/user/reset_password');
+const tripRoutes = require('../routes/trip/trip');
 
 
 module.exports = function(app){
@@ -13,5 +13,5 @@ module.exports = function(app){
     app.use('/api/user/send_otp',sendOtp);
     app.use('/api/user/login',login);
     app.use('/api/user/verify_otp',verifyOtp);
-    app.use('/api/user/reset_password',resetPassword);
+    app.use('/api/trips', tripRoutes);
 }
