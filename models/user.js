@@ -39,6 +39,8 @@ const userSchema = new mongoose.Schema({
                 value.every((phone) => validator.isMobilePhone(phone, ))
         },
     },
+    resetToken: String,
+    resetTokenExpiry: Date
 });
 
 userSchema.methods.generateAuthToken = function() {
