@@ -6,14 +6,15 @@ const tripSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      minlength: 3,
     },
     locations: {
       type: [String],
       validate: {
         validator: function (val) {
-          return Array.isArray(val) && val.length >= 2;
+          return Array.isArray(val) && val.length >= 2 && val.every(loc => loc.length >= 3);
         },
-        message: 'At least two locations are required.',
+        message: 'At least two locations are required, each with a minimum length of 3 characters.',
       },
       required: true,
     },
