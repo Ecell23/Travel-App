@@ -6,11 +6,11 @@ const Trip = require('../../models/trip');
 // Validation function for trip details
 function validateTrip(trip) {
   const schema = Joi.object({
-    title: Joi.string().min(1).max(100).required(),
-    description: Joi.string().max(500).allow('', null),
-    location: Joi.string().required(),
+    startLocation: Joi.string().min(3).required(),
+    locations: Joi.array().items(Joi.string().min(3).required()).min(2).required(),
     startDate: Joi.date().required(),
-    endDate: Joi.date().required(),
+    guests: Joi.number().min(0).max(10).required(),
+    budget: Joi.string().allow('', null),
     user: Joi.string().required(),
   });
   return schema.validate(trip);
@@ -22,11 +22,11 @@ router.post('/', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   let trip = new Trip({
-    title: req.body.title,
-    description: req.body.description,
-    location: req.body.location,
+    startLocation: req.body.startLocation,
+    locations: req.body.locations,
     startDate: req.body.startDate,
-    endDate: req.body.endDate,
+    guests: req.body.guests,
+    budget: req.body.budget,
     user: req.body.user,
   });
 
