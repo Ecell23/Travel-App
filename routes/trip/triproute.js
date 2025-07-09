@@ -10,6 +10,8 @@ function validateTrip(trip) {
       placeId: Joi.string().min(1).required(),
       placeName: Joi.string().min(3).required(),
       day: Joi.number().valid(1).required(),
+      latitude: Joi.number().allow(null),
+      longitude: Joi.number().allow(null),
     }).required(),
     locations: Joi.array()
       .items(
@@ -17,6 +19,8 @@ function validateTrip(trip) {
           placeId: Joi.string().min(1).required(),
           placeName: Joi.string().min(3).required(),
           day: Joi.number().min(1).required(),
+          latitude: Joi.number().allow(null),
+          longitude: Joi.number().allow(null),
         })
       )
       .min(2)
@@ -91,6 +95,40 @@ router.delete('/:id', async (req, res) => {
   const trip = await Trip.findOneAndDelete({ _id: req.params.id, user: req.user._id });
   if (!trip) return res.status(404).send('Trip not found or not authorized');
   res.status(200).send({ message: 'Trip deleted successfully' });
+});
+
+// PATCH route: Edit saved attraction in a trip location
+router.patch('/attraction', async (req, res) => {
+  const { tripId, locationIndex, attraction } = req.body;
+  if (!tripId || typeof locationIndex !== 'number' || !attraction || !attraction.placeId) {
+    return res.status(400).send({ success: false, msg: 'tripId, locationIndex, and valid attraction object required' });
+  }
+
+  // Only allow editing for authenticated user
+  const trip = await Trip.findOne({ _id: tripId, user: req.user._id });
+  if (!trip) return res.status(404).send({ success: false, msg: 'Trip not found or not authorized' });
+
+  // Validate location index (skip startLocation, so index 0 is first in locations array)
+  if (!Array.isArray(trip.locations) || locationIndex < 0 || locationIndex >= trip.locations.length) {
+    return res.status(400).send({ success: false, msg: 'Invalid location index' });
+  }
+
+  const loc = trip.locations[locationIndex];
+  if (!loc.attractions) loc.attractions = [];
+
+  // Check if attraction already exists (by placeId)
+  const existingIdx = loc.attractions.findIndex(a => a.placeId === attraction.placeId);
+  if (existingIdx === -1) {
+    // Add to start
+    loc.attractions.unshift(attraction);
+    await trip.save();
+    return res.send({ success: true, msg: 'Attraction added' });
+  } else {
+    // Remove it
+    loc.attractions.splice(existingIdx, 1);
+    await trip.save();
+    return res.send({ success: true, msg: 'Attraction removed' });
+  }
 });
 
 module.exports = router;
