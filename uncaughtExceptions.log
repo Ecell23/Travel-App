@@ -158,3 +158,70 @@ SyntaxError: Unexpected token ')'
     at Module.require (node:internal/modules/cjs/loader:1487:12)
     at require (node:internal/modules/helpers:135:16)
     at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\startup\userRoutes.js:8:20)
+[2025-07-05T10:13:29.544Z] ERROR: uncaughtException: querySrv ECONNREFUSED _mongodb._tcp.cluster0.ru7rx.mongodb.net
+Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.ru7rx.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
+[2025-07-06T18:01:56.953Z] ERROR: uncaughtException: invalid_grant
+Error: invalid_grant
+    at Gaxios._request (C:\Users\preet\node\Travel-App-premansh\node_modules\gaxios\build\src\gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async OAuth2Client.refreshTokenNoCache (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:212:19)
+    at async OAuth2Client.refreshAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:247:19)
+    at async OAuth2Client.getAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:276:23)
+[2025-07-07T11:15:05.791Z] ERROR: uncaughtException: Unexpected identifier 'schema'
+C:\Users\preet\node\Travel-App-premansh\routes\trip\triproute.js:9
+  const schema = Joi.object({
+        ^^^^^^
+
+SyntaxError: Unexpected identifier 'schema'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\startup\userRoutes.js:9:20)
+[2025-07-07T11:15:39.642Z] ERROR: uncaughtException: request to https://oauth2.googleapis.com/token failed, reason: getaddrinfo ENOTFOUND oauth2.googleapis.com
+Error: request to https://oauth2.googleapis.com/token failed, reason: getaddrinfo ENOTFOUND oauth2.googleapis.com
+    at Gaxios._request (C:\Users\preet\node\Travel-App-premansh\node_modules\gaxios\build\src\gaxios.js:149:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async OAuth2Client.refreshTokenNoCache (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:212:19)
+    at async OAuth2Client.refreshAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:247:19)
+    at async OAuth2Client.getAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:276:23)
+[2025-07-07T11:17:18.286Z] ERROR: uncaughtException: Unexpected token ')'
+C:\Users\preet\node\Travel-App-premansh\routes\trip\triproute.js:8
+  winston.info(trip.);
+                    ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\startup\userRoutes.js:9:20)
+[2025-07-08T17:41:37.197Z] ERROR: uncaughtException: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\preet\node\Travel-App-premansh\node_modules\mongoose\lib\connection.js:1110:11)
+    at NativeConnection.openUri (C:\Users\preet\node\Travel-App-premansh\node_modules\mongoose\lib\connection.js:1041:11)
+[2025-07-08T17:48:08.914Z] ERROR: uncaughtException: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\preet\node\Travel-App-premansh\node_modules\mongoose\lib\connection.js:1110:11)
+    at NativeConnection.openUri (C:\Users\preet\node\Travel-App-premansh\node_modules\mongoose\lib\connection.js:1041:11)
+[2025-07-08T17:51:25.731Z] ERROR: uncaughtException: request to https://oauth2.googleapis.com/token failed, reason: Client network socket disconnected before secure TLS connection was established
+Error: request to https://oauth2.googleapis.com/token failed, reason: Client network socket disconnected before secure TLS connection was established
+    at Gaxios._request (C:\Users\preet\node\Travel-App-premansh\node_modules\gaxios\build\src\gaxios.js:149:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async OAuth2Client.refreshTokenNoCache (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:212:19)
+    at async OAuth2Client.refreshAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:247:19)
+    at async OAuth2Client.getAccessTokenAsync (C:\Users\preet\node\Travel-App-premansh\node_modules\google-auth-library\build\src\auth\oauth2client.js:276:23)
+[2025-07-09T17:15:32.512Z] ERROR: uncaughtException: querySrv ECONNREFUSED _mongodb._tcp.cluster0.ru7rx.mongodb.net
+Error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.ru7rx.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:294:17)
