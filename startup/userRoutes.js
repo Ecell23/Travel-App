@@ -4,7 +4,7 @@ const signup = require('../routes/user/signup');
 const sendOtp = require('../routes/user/send_otp');
 const login = require('../routes/user/login');
 const verifyOtp = require('../routes/user/verify_otp');
-const tripRoutes = require('../routes/trip/trip');
+const tripRoutes = require('../routes/trip/triproute');
 
 
 module.exports = function(app){
