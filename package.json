@@ -24,6 +24,7 @@
     "mongoose": "^8.9.4",
     "nodemailer": "^6.10.0",
     "npm": "^11.0.0",
+    "simple-swizzle": "^0.2.2",
     "validator": "^13.12.0",
     "winston": "^3.17.0"
   },
