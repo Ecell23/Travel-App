@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.10.0",
     "bcrypt": "^5.1.1",
     "config": "^3.3.12",
     "dotenv": "^16.4.7",
@@ -23,6 +24,7 @@
     "mongoose": "^8.9.4",
     "nodemailer": "^6.10.0",
     "npm": "^11.0.0",
+    "simple-swizzle": "^0.2.2",
     "validator": "^13.12.0",
     "winston": "^3.17.0"
   },

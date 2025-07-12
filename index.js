@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const  winston = require('winston');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -7,11 +8,13 @@ const error = require('./middleware/error');
 
 const app = express();
 
+
 require('./startup/logger')();
 require('./startup/config')();
 
 app.use(express.json());
 require('./startup/userRoutes')(app);
+require('./startup/hotelRoutes')(app);
 app.use(error);
 
 mongoose.connect(config.get('dbKey'))
