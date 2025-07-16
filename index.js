@@ -21,5 +21,5 @@ mongoose.connect(config.get('dbKey'))
     .then( () => winston.info('Connected to Database...'));
 
 const port = process.env.PORT || 3000;
-const server = app.listen(port, () => winston.info(`Listening on port ${port}...`));
+const server = app.listen(port,'0.0.0.0', () => winston.info(`Listening on port ${port}...`));
 module.exports = server;
