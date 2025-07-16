@@ -247,3 +247,27 @@ ReferenceError: searchByGeoId is not defined
     at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
     at node:internal/main/run_main_module:36:49
+[2025-07-16T05:03:15.998Z] ERROR: uncaughtException: nodemailer is not defined
+ReferenceError: nodemailer is not defined
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\utils\send_email.js:19:19)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\routes\user\send_otp.js:5:19)
+[2025-07-16T05:03:47.459Z] ERROR: uncaughtException: nodemailer is not defined
+ReferenceError: nodemailer is not defined
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\utils\send_email.js:19:19)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\preet\node\Travel-App-premansh\routes\user\send_otp.js:5:19)
