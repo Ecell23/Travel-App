@@ -5,6 +5,14 @@ const Trip = require('../../models/trip');
 
 // Validation function for trip details
 function validateTrip(trip) {
+  const attractionSchema = Joi.object({
+    placeId: Joi.string().min(1).required(),
+    name: Joi.string().min(1).required(),
+    type: Joi.string().required(),
+    rating: Joi.number().required(),
+    image: Joi.string().required(),
+  });
+
   const schema = Joi.object({
     startLocation: Joi.object({
       placeId: Joi.string().min(1).required(),
@@ -12,6 +20,7 @@ function validateTrip(trip) {
       day: Joi.number().valid(1).required(),
       latitude: Joi.number().allow(null),
       longitude: Joi.number().allow(null),
+      attractions: Joi.array().items(attractionSchema).allow(null),
     }).required(),
     locations: Joi.array()
       .items(
@@ -21,6 +30,7 @@ function validateTrip(trip) {
           day: Joi.number().min(1).required(),
           latitude: Joi.number().allow(null),
           longitude: Joi.number().allow(null),
+          attractions: Joi.array().items(attractionSchema).allow(null).default([]),
         })
       )
       .min(2)
